@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ติวสอบปลายภาค HTML CSS JS</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;800&display=swap">
+<style>
+:root{--ink:#14213d;--bg:#eef2f7;--card:#fff;--mute:#5b6577;--line:#d5dce8;--hl:#ffd23f;--ok:#1b8a4b;--no:#c62f2f;--code:#101828;--codet:#e6edf7}
+@media(prefers-color-scheme:dark){:root{--ink:#e8eefb;--bg:#0e1524;--card:#17203a;--mute:#9fb0cc;--line:#2a3658;--code:#0a0f1c}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans Thai","Segoe UI",Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding-bottom:3rem}
+header{padding:1.5rem 1rem 1rem;max-width:860px;margin:0 auto}
+h1{font-size:clamp(1.5rem,5vw,2.2rem);font-weight:800;line-height:1.3}
+h1 mark{background:var(--hl);color:#14213d;padding:0 .35rem;border-radius:4px}
+header p{color:var(--mute)}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:.5rem;padding:.6rem 1rem;overflow-x:auto}
+nav button{flex:0 0 auto;font:inherit;font-weight:600;padding:.45rem 1.1rem;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+nav button.on{background:var(--ink);color:var(--bg)}
+main{max-width:860px;margin:0 auto;padding:1rem}
+section{display:none}section.on{display:block}
+h2{font-size:1.35rem;margin:1.2rem 0 .6rem}
+h3{font-size:1.05rem;margin:.2rem 0 .3rem}
+.box{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:8px;padding:1rem;margin-bottom:1rem}
+.box.tip{border-left-color:var(--hl)}
+pre{background:var(--code);color:var(--codet);padding:.8rem 1rem;border-radius:6px;overflow-x:auto;font:.85rem/1.6 Consolas,Menlo,monospace;margin:.5rem 0}
+code{background:var(--line);padding:.05rem .35rem;border-radius:4px;font:.88em Consolas,Menlo,monospace}
+pre code{background:none;padding:0}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top;font-size:.92rem}
+th{background:var(--ink);color:var(--bg)}
+.demo{border:2px dashed var(--line);border-radius:8px;padding:1rem;margin:.5rem 0}
+.demo button{font:inherit;padding:.4rem 1rem;border-radius:6px;border:0;background:var(--ink);color:var(--bg);cursor:pointer}
+.demo .card{margin-top:.6rem;padding:.8rem;border-radius:8px;background:var(--hl);color:#14213d}
+.hidden{display:none}
+.q{padding:.7rem 0;border-bottom:1px solid var(--line)}
+.q:last-of-type{border:0}
+.q input[type=text],.q select{font:inherit;padding:.25rem .5rem;border:1.5px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);max-width:100%}
+.q input[type=text]{width:9rem}
+.q label{display:inline-block;margin-right:1rem;cursor:pointer}
+.q.ok{background:rgba(27,138,75,.12)}.q.no{background:rgba(198,47,47,.12)}
+.fb{display:block;font-size:.85rem;margin-top:.3rem;font-weight:600}
+.q.ok .fb{color:var(--ok)}.q.no .fb{color:var(--no)}
+.act{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-top:.8rem}
+.act button{font:inherit;font-weight:600;padding:.5rem 1.2rem;border-radius:8px;border:0;background:var(--ink);color:var(--bg);cursor:pointer}
+.act button.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.score{font-weight:800}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--hl);outline-offset:2px}
+</style>
+</head>
+<body>
+<header>
+<h1>ติวสอบปลายภาค <mark>HTML · CSS · JS</mark></h1>
+<p>สรุปสั้น ตัวอย่างจากโปรเจกต์ "คู่มือสัตว์เลี้ยง" และแบบฝึกหัดตามโครงข้อสอบ 5 ตอน</p>
+</header>
+<nav id="tabs">
+<button class="on" data-t="html">HTML</button>
+<button data-t="css">CSS</button>
+<button data-t="js">JS</button>
+<button data-t="quiz">ฝึกทำข้อสอบ</button>
+</nav>
+<main>
+
+<!-- ============ HTML ============ -->
+<section id="html" class="on">
+<h2>1. โครงหน้าเว็บ</h2>
+<div class="box">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="th"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+  &lt;title&gt;คู่มือสัตว์เลี้ยง&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+  &lt;main&gt;...&lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><code>&lt;head&gt;</code> เก็บข้อมูลหน้าเว็บ (ไม่แสดงเป็นเนื้อหา) ส่วน <code>&lt;body&gt;</code> คือสิ่งที่ผู้ใช้เห็น แท็ก <code>&lt;link&gt;</code> ต้องอยู่ใน head</p>
+</div>
+<div class="box tip"><b>เคล็ดลับ meta viewport:</b> บรรทัด <code>meta name="viewport"</code> ทำให้เว็บแสดงผลพอดีหน้าจอมือถือ ถ้าไม่ใส่ มือถือจะย่อทั้งหน้าจนเล็กมาก</div>
+
+<h2>2. Tag, Attribute, Value</h2>
+<div class="box">
+<pre><code>&lt;a href="cat.html" class="active"&gt;แมว&lt;/a&gt;</code></pre>
+<div class="tw"><table>
+<tr><th>ส่วน</th><th>คืออะไร</th></tr>
+<tr><td><code>a</code></td><td>tag (แท็ก) = ลิงก์</td></tr>
+<tr><td><code>href</code>, <code>class</code></td><td>attribute (คุณสมบัติของแท็ก)</td></tr>
+<tr><td><code>"cat.html"</code>, <code>"active"</code></td><td>value (ค่าของ attribute)</td></tr>
+<tr><td><code>แมว</code></td><td>เนื้อหาระหว่างแท็กเปิด-ปิด</td></tr>
+</table></div>
+</div>
+
+<h2>3. แท็กที่ต้องจำ</h2>
+<div class="tw"><table>
+<tr><th>แท็ก</th><th>หน้าที่</th><th>ตัวอย่างจากโปรเจกต์</th></tr>
+<tr><td><code>h1–h6</code></td><td>หัวข้อ</td><td><code>&lt;h2&gt;ปลาทอง&lt;/h2&gt;</code></td></tr>
+<tr><td><code>p</code></td><td>ย่อหน้า</td><td><code>&lt;p class="breed"&gt;Goldfish&lt;/p&gt;</code></td></tr>
+<tr><td><code>img</code></td><td>รูป (ต้องมี src และ alt)</td><td><code>&lt;img src="..." alt="ปลาทอง"&gt;</code></td></tr>
+<tr><td><code>a</code></td><td>ลิงก์</td><td><code>&lt;a href="fish.html"&gt;</code></td></tr>
+<tr><td><code>article</code></td><td>เนื้อหาอิสระ เช่น การ์ด</td><td><code>&lt;article class="pet-card"&gt;</code></td></tr>
+<tr><td><code>section</code></td><td>แบ่งกลุ่มเนื้อหา</td><td><code>&lt;section class="info-section"&gt;</code></td></tr>
+<tr><td><code>i</code></td><td>ไอคอน Font Awesome</td><td><code>&lt;i class="fa-solid fa-dog"&gt;&lt;/i&gt;</code></td></tr>
+<tr><td><code>footer</code></td><td>ส่วนท้ายหน้า</td><td><code>&lt;footer&gt;&amp;copy; 2026&lt;/footer&gt;</code></td></tr>
+</table></div>
+<div class="box tip" style="margin-top:1rem"><b>จุดที่พลาดบ่อย:</b> ในโค้ดโปรเจกต์เขียน <code>&amp;copy 2026</code> ที่ถูกต้องคือ <code>&amp;copy;</code> (ต้องมีเครื่องหมาย ; ปิดท้าย) และหน้า SmallPets มี <code>&lt;i class="active"&gt;</code> ซึ่งควรเป็นไอคอน เช่น <code>fa-solid fa-otter</code></div>
+
+<h2>4. Form และ Table (ที่เรียนใน style-pets02)</h2>
+<div class="box">
+<pre><code>&lt;input type="radio" name="pet" id="r1"&gt;
+&lt;label for="r1"&gt;สุนัข&lt;/label&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;สัตว์&lt;/th&gt;&lt;th&gt;อายุขัย&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;แฮมสเตอร์&lt;/td&gt;&lt;td&gt;2-3 ปี&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<p><code>for</code> ของ label ต้องตรงกับ <code>id</code> ของ input ส่วน radio ที่อยู่กลุ่มเดียวกันใช้ <code>name</code> เดียวกัน ตารางใช้ tr = แถว, th = หัวคอลัมน์, td = ช่องข้อมูล</p>
+</div>
+</section>
+
+<!-- ============ CSS ============ -->
+<section id="css">
+<h2>1. Selector 5 แบบ</h2>
+<div class="tw"><table>
+<tr><th>แบบ</th><th>เขียน</th><th>เลือกอะไร</th></tr>
+<tr><td>Universal</td><td><code>*</code></td><td>ทุก element</td></tr>
+<tr><td>Tag</td><td><code>nav a</code></td><td>แท็ก a ที่อยู่ใน nav</td></tr>
+<tr><td>Class</td><td><code>.pet-card</code></td><td>element ที่ class="pet-card" (ใช้ซ้ำได้)</td></tr>
+<tr><td>ID</td><td><code>#filter-all</code></td><td>element ที่ id="filter-all" (ซ้ำไม่ได้)</td></tr>
+<tr><td>Pseudo-class</td><td><code>.pet-card:hover</code></td><td>ตอนเมาส์ชี้การ์ด</td></tr>
+<tr><td>รวมคลาส</td><td><code>nav a.active</code></td><td>a ที่มี class active (ไม่เว้นวรรค)</td></tr>
+</table></div>
+<div class="box tip" style="margin-top:1rem">โครงสร้าง CSS คือ <code>selector { property: value; }</code> เช่น <code>color: red;</code> โดย color = property และ red = value</div>
+
+<h2>2. ตัวแปร CSS</h2>
+<div class="box">
+<pre><code>:root {
+  --primary-color: #111111;
+}
+.header-title {
+  color: var(--primary-color);
+}</code></pre>
+<p>ประกาศด้วย <code>--ชื่อ</code> ใน <code>:root</code> แล้วเรียกใช้ด้วย <code>var(--ชื่อ)</code> แก้ที่เดียว เปลี่ยนทั้งเว็บ</p>
+</div>
+
+<h2>3. Box model</h2>
+<div class="box">
+<p>จากใน element ออกมา: content → padding (ระยะในกรอบ) → border (เส้นขอบ) → margin (ระยะนอกกรอบ)</p>
+<pre><code>* { box-sizing: border-box; margin: 0; padding: 0; }</code></pre>
+<p><code>border-box</code> ทำให้ width ที่ตั้งไว้นับรวม padding และ border แล้ว คำนวณขนาดง่ายขึ้น</p>
+</div>
+
+<h2>4. Flexbox และ Grid</h2>
+<div class="box">
+<pre><code>nav {
+  display: flex;            /* เรียงแนวนอน */
+  justify-content: center;  /* จัดกลางตามแกนหลัก */
+  flex-wrap: wrap;          /* ล้นแล้วขึ้นบรรทัดใหม่ */
+  gap: .75rem;
+}
+.pet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}</code></pre>
+<p>Flex เหมาะกับแถวเดียว (เมนู ปุ่ม) ส่วน Grid เหมาะกับหลายแถวหลายคอลัมน์ (การ์ดสัตว์)</p>
+</div>
+
+<h2>5. ทำให้รองรับมือถือ (Responsive)</h2>
+<div class="box">
+<pre><code>@media (max-width: 480px) {
+  .info-grid {
+    grid-template-columns: 1fr;  /* มือถือเหลือ 1 คอลัมน์ */
+  }
+}</code></pre>
+<p>สูตรรองรับมือถือมี 3 อย่าง: ใส่ meta viewport, ใช้หน่วยยืดหยุ่น (%, rem, fr) และใช้ <code>@media</code> ปรับเลย์เอาต์ตามความกว้างจอ</p>
+</div>
+
+<h2>6. Hover และ Transition</h2>
+<div class="box">
+<pre><code>.pet-card img { transition: transform 0.25s; }
+.pet-card:hover img { transform: translate(-4px) scale(1.03); }</code></pre>
+</div>
+</section>
+
+<!-- ============ JS ============ -->
+<section id="js">
+<h2>1. ดึง element และเปลี่ยนค่า</h2>
+<div class="box">
+<pre><code>const title = document.getElementById("title");
+const card  = document.querySelector(".pet-card");
+const all   = document.querySelectorAll(".pet-card");
+
+title.textContent = "ข้อความใหม่";
+card.style.background = "yellow";</code></pre>
+<p><code>getElementById</code> ใช้ id (ไม่ต้องใส่ #) ส่วน <code>querySelector</code> ใช้ selector แบบ CSS คืนตัวแรก และ <code>querySelectorAll</code> คืนทุกตัว</p>
+</div>
+
+<h2>2. Event: ตอบสนองการกด</h2>
+<div class="box">
+<pre><code>btn.addEventListener("click", function () {
+  detail.classList.toggle("hidden");
+});</code></pre>
+<p><code>classList.toggle("hidden")</code> = ถ้ามี class นี้อยู่ให้ลบ ถ้าไม่มีให้เพิ่ม ใช้คู่กับ CSS <code>.hidden { display: none; }</code> ที่มีใน style-pets03.css</p>
+</div>
+
+<h2>ลองกดดู</h2>
+<div class="demo">
+<button id="demoBtn">ดูรายละเอียดเพิ่มเติม</button>
+<div id="demoCard" class="card hidden">โกลเด้น รีทรีฟเวอร์: เป็นมิตร ฉลาด ภักดี และรักครอบครัว</div>
+</div>
+
+<h2>3. ตัวกรองหมวดหมู่ (แนวเดียวกับ .category-btn)</h2>
+<div class="box">
+<pre><code>const buttons = document.querySelectorAll(".category-btn");
+const cards   = document.querySelectorAll(".pet-card");
+
+buttons.forEach(function (b) {
+  b.addEventListener("click", function () {
+    buttons.forEach(x =&gt; x.classList.remove("active"));
+    b.classList.add("active");
+    cards.forEach(function (c) {
+      const show = b.dataset.cat === "all" || c.dataset.cat === b.dataset.cat;
+      c.classList.toggle("hidden", !show);
+    });
+  });
+});</code></pre>
+<p>อ่านโค้ดทีละบรรทัดแล้วอธิบายเป็นคำพูดให้ได้ ข้อสอบมักถามว่าบรรทัดนี้ทำอะไร</p>
+</div>
+
+<h2>4. ตัวแปรและเงื่อนไข</h2>
+<div class="box">
+<pre><code>let count = 0;        // เปลี่ยนค่าได้
+const name = "Hachi"; // เปลี่ยนไม่ได้
+if (count &gt; 5) { ... } else { ... }
+for (let i = 0; i &lt; 3; i++) { console.log(i); }</code></pre>
+</div>
+<p style="color:var(--mute);font-size:.88rem">หมายเหตุ: ตัวอย่างข้อ 3 เขียนตามแนวคิดของ style-pets03.css ส่วนไฟล์ script.js จริงของคุณ ให้เปิดเทียบอีกที</p>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section id="quiz">
+<p style="margin-top:1rem">ตอบแล้วกด "ตรวจคำตอบ" แต่ละตอนได้เลย (ตอบด้วยตัวพิมพ์เล็กใหญ่ไหนก็ได้)</p>
+
+<h2>ตอนที่ 1 เติมคำสั่ง HTML</h2>
+<div class="box" data-part>
+<div class="q" data-ans="a"><code>&lt;<input type="text">  href="dog.html"&gt;สุนัข&lt;/a&gt;</code></div>
+<div class="q" data-ans="img"><code>&lt;<input type="text"> src="dog.jpg" alt="สุนัข"&gt;</code></div>
+<div class="q" data-ans="rel"><code>&lt;link <input type="text">="stylesheet" href="css/style.css"&gt;</code></div>
+<div class="q" data-ans="footer">แท็กส่วนท้ายหน้าเว็บคือ <code>&lt;<input type="text">&gt;</code></div>
+<div class="act"><button data-check>ตรวจคำตอบ</button><button class="alt" data-reset>ล้าง</button><span class="score"></span></div>
+</div>
+
+<h2>ตอนที่ 2 tag / attribute / selector / property / value</h2>
+<div class="box" data-part>
+<div class="q" data-ans="selector"><code>.pet-card img</code> คือ
+<select><option value="">เลือก</option><option>tag</option><option>attribute</option><option>selector</option><option>property</option><option>value</option></select></div>
+<div class="q" data-ans="property"><code>width</code> ใน <code>width: 100%;</code> คือ
+<select><option value="">เลือก</option><option>tag</option><option>attribute</option><option>selector</option><option>property</option><option>value</option></select></div>
+<div class="q" data-ans="value"><code>100%</code> ใน <code>width: 100%;</code> คือ
+<select><option value="">เลือก</option><option>tag</option><option>attribute</option><option>selector</option><option>property</option><option>value</option></select></div>
+<div class="q" data-ans="attribute"><code>href</code> ใน <code>&lt;a href="cat.html"&gt;</code> คือ
+<select><option value="">เลือก</option><option>tag</option><option>attribute</option><option>selector</option><option>property</option><option>value</option></select></div>
+<div class="q" data-ans="tag"><code>a</code> ใน <code>&lt;a href="cat.html"&gt;</code> คือ
+<select><option value="">เลือก</option><option>tag</option><option>attribute</option><option>selector</option><option>property</option><option>value</option></select></div>
+<div class="act"><button data-check>ตรวจคำตอบ</button><button class="alt" data-reset>ล้าง</button><span class="score"></span></div>
+</div>
+
+<h2>ตอนที่ 3 เติมคำในโค้ด</h2>
+<div class="box" data-part>
+<pre><code>.pet-grid {
+  display: ____1____;
+  grid-template-columns: repeat(auto-fit, minmax(300px, ____2____));
+  ____3____: 1.5rem;
+}
+.header-title {
+  color: ____4____(--primary-color);
+}</code></pre>
+<div class="q" data-ans="grid">1 = <input type="text"></div>
+<div class="q" data-ans="1fr">2 = <input type="text"></div>
+<div class="q" data-ans="gap">3 = <input type="text"></div>
+<div class="q" data-ans="var">4 = <input type="text"></div>
+<div class="act"><button data-check>ตรวจคำตอบ</button><button class="alt" data-reset>ล้าง</button><span class="score"></span></div>
+</div>
+
+<h2>ตอนที่ 4 ✓ หรือ ✗</h2>
+<div class="box" data-part>
+<div class="q" data-ans="t" data-why="alt แสดงแทนรูปเมื่อรูปโหลดไม่ได้ และช่วยผู้ใช้โปรแกรมอ่านหน้าจอ">1. <code>alt</code> ใช้ใส่ข้อความแทนรูปเมื่อรูปโหลดไม่ขึ้น<br><label><input type="radio" name="f1" value="t"> ✓</label><label><input type="radio" name="f1" value="f"> ✗</label></div>
+<div class="q" data-ans="f" data-why="จุด (.) คือ class selector ส่วน id ใช้ #">2. <code>.active</code> เป็น id selector<br><label><input type="radio" name="f2" value="t"> ✓</label><label><input type="radio" name="f2" value="f"> ✗</label></div>
+<div class="q" data-ans="f" data-why="link อยู่ใน head">3. แท็ก <code>&lt;link&gt;</code> ต้องเขียนไว้ใน <code>&lt;body&gt;</code><br><label><input type="radio" name="f3" value="t"> ✓</label><label><input type="radio" name="f3" value="f"> ✗</label></div>
+<div class="q" data-ans="t" data-why="border-box นับ padding และ border รวมใน width">4. <code>box-sizing: border-box</code> ทำให้ padding นับรวมในความกว้าง<br><label><input type="radio" name="f4" value="t"> ✓</label><label><input type="radio" name="f4" value="f"> ✗</label></div>
+<div class="q" data-ans="f" data-why="ต้องเป็น &amp;copy; มี ; ปิดท้าย">5. <code>&amp;copy 2026</code> เขียนถูกต้องสมบูรณ์แล้ว<br><label><input type="radio" name="f5" value="t"> ✓</label><label><input type="radio" name="f5" value="f"> ✗</label></div>
+<div class="act"><button data-check>ตรวจคำตอบ</button><button class="alt" data-reset>ล้าง</button><span class="score"></span></div>
+</div>
+
+<h2>ตอนที่ 5 ช้อยส์</h2>
+<div class="box" data-part>
+<div class="q" data-ans="b" data-why="ใช้ querySelector หรือ getElementById เลือก element">1. คำสั่งใดดึง element ด้วย id<br>
+<label><input type="radio" name="c1" value="a"> document.write()</label>
+<label><input type="radio" name="c1" value="b"> document.getElementById()</label>
+<label><input type="radio" name="c1" value="c"> console.log()</label></div>
+<div class="q" data-ans="c" data-why="@media ปรับสไตล์ตามความกว้างหน้าจอ">2. สิ่งใดใช้ปรับเลย์เอาต์ให้เหมาะกับมือถือ<br>
+<label><input type="radio" name="c2" value="a"> :root</label>
+<label><input type="radio" name="c2" value="b"> :hover</label>
+<label><input type="radio" name="c2" value="c"> @media</label></div>
+<div class="q" data-ans="a" data-why="toggle = มีก็ลบ ไม่มีก็เพิ่ม">3. <code>el.classList.toggle("hidden")</code> ทำอะไร<br>
+<label><input type="radio" name="c3" value="a"> สลับเพิ่ม/ลบ class hidden</label>
+<label><input type="radio" name="c3" value="b"> ลบ element ถาวร</label>
+<label><input type="radio" name="c3" value="c"> เปลี่ยนชื่อ class</label></div>
+<div class="q" data-ans="b" data-why="display: flex เรียงลูกในแนวแถวและจัดตำแหน่งง่าย">4. ข้อใดเหมาะกับเมนูเรียงแนวนอน<br>
+<label><input type="radio" name="c4" value="a"> display: block</label>
+<label><input type="radio" name="c4" value="b"> display: flex</label>
+<label><input type="radio" name="c4" value="c"> display: none</label></div>
+<div class="act"><button data-check>ตรวจคำตอบ</button><button class="alt" data-reset>ล้าง</button><span class="score"></span></div>
+</div>
+</section>
+</main>
+
+<script>
+// สลับแท็บ
+var tabs = document.querySelectorAll("#tabs button");
+tabs.forEach(function (b) {
+  b.addEventListener("click", function () {
+    tabs.forEach(function (x) { x.classList.remove("on"); });
+    document.querySelectorAll("main section").forEach(function (s) { s.classList.remove("on"); });
+    b.classList.add("on");
+    document.getElementById(b.dataset.t).classList.add("on");
+    window.scrollTo(0, 0);
+  });
+});
+
+// ตัวอย่าง toggle
+document.getElementById("demoBtn").addEventListener("click", function () {
+  document.getElementById("demoCard").classList.toggle("hidden");
+});
+
+// ตรวจคำตอบ
+function getVal(q) {
+  var t = q.querySelector("input[type=text]"), s = q.querySelector("select"), r = q.querySelector("input[type=radio]:checked");
+  if (t) return t.value.trim().toLowerCase();
+  if (s) return s.value.trim().toLowerCase();
+  return r ? r.value : "";
+}
+document.querySelectorAll("[data-part]").forEach(function (part) {
+  var qs = part.querySelectorAll(".q");
+  part.querySelector("[data-check]").addEventListener("click", function () {
+    var score = 0;
+    qs.forEach(function (q) {
+      var old = q.querySelector(".fb"); if (old) old.remove();
+      var ok = getVal(q) === q.dataset.ans;
+      if (ok) score++;
+      q.classList.toggle("ok", ok); q.classList.toggle("no", !ok);
+      var fb = document.createElement("span"); fb.className = "fb";
+      fb.textContent = ok ? "ถูกต้อง" : "ยังไม่ถูก เฉลย: " + q.dataset.ans + (q.dataset.why ? " เพราะ " + q.dataset.why : "");
+      q.appendChild(fb);
+    });
+    part.querySelector(".score").textContent = "ได้ " + score + " / " + qs.length;
+  });
+  part.querySelector("[data-reset]").addEventListener("click", function () {
+    qs.forEach(function (q) {
+      q.classList.remove("ok", "no");
+      var fb = q.querySelector(".fb"); if (fb) fb.remove();
+      q.querySelectorAll("input[type=text]").forEach(function (i) { i.value = ""; });
+      q.querySelectorAll("select").forEach(function (s) { s.selectedIndex = 0; });
+      q.querySelectorAll("input[type=radio]").forEach(function (r) { r.checked = false; });
+    });
+    part.querySelector(".score").textContent = "";
+  });
+});
+</script>
+</body>
+</html>
